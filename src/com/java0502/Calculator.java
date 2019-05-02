@@ -15,10 +15,10 @@ public class Calculator extends HttpServlet {
 		String c = request.getParameter("c");
 		int result;
 		String html = "";	
-		
+
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("utf-8");
-		
+
 		switch(c) {
 		case "+":
 			result = Integer.parseInt(a) + Integer.parseInt(b);
@@ -39,14 +39,14 @@ public class Calculator extends HttpServlet {
 		default:
 			break;
 		}	
-		
+
 		html = html + "<a href='http://localhost:8080/201905'>처음으로</a>";
 		response.getWriter().print(html);
-		
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+
 	}
 
 }
