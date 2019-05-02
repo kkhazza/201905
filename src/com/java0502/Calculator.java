@@ -30,11 +30,11 @@ public class Calculator extends HttpServlet {
 			break;
 		case "/":
 			result = Integer.parseInt(a) / Integer.parseInt(b);
-			html = html + "결과: " + a + " / " + b + " = " + result + "<br>";
+			html = html + "결과: " + a + " / " + b + " = " + (float)result + "<br>";
 			break;
 		case "*":
 			result = Integer.parseInt(a) * Integer.parseInt(b);
-			html = html + "결과: " + a + " * " + b + " = " + result + "<br>";
+			html = html + "결과: " + a + " * " + b + " = " + (float)result + "<br>";
 			break;
 		default:
 			break;
