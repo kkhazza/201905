@@ -13,33 +13,36 @@ public class Calculator extends HttpServlet {
 		String a = request.getParameter("a");
 		String b = request.getParameter("b");
 		String c = request.getParameter("c");
-		int result;
+		float result = 0;
 		String html = "";	
 
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("utf-8");
-
+		
+		계산기 cal = new 계산기();
+		
 		switch(c) {
 		case "+":
-			result = Integer.parseInt(a) + Integer.parseInt(b);
-			html = html + "결과: " + a + " + " + b + " = " + result + "<br>";
+			result = cal.덧셈(Integer.parseInt(a),Integer.parseInt(b));
+			html = html + "결과: " + a + c + b + " = " + result + "<br>";
 			break;
 		case "-":
-			result = Integer.parseInt(a) - Integer.parseInt(b);
-			html = html + "결과: " + a + " - " + b + " = " + result + "<br>";
+			result = cal.뺄셈(Integer.parseInt(a),Integer.parseInt(b));
+			html = html + "결과: " + a + c + b + " = " + result + "<br>";
 			break;
 		case "/":
-			result = Integer.parseInt(a) / Integer.parseInt(b);
-			html = html + "결과: " + a + " / " + b + " = " + (float)result + "<br>";
+			result = cal.나눗셈(Integer.parseInt(a),Integer.parseInt(b));
+			html = html + "결과: " + a + c + b + " = " + result + "<br>";
 			break;
 		case "*":
-			result = Integer.parseInt(a) * Integer.parseInt(b);
-			html = html + "결과: " + a + " * " + b + " = " + (float)result + "<br>";
+			result = cal.곱셈(Integer.parseInt(a),Integer.parseInt(b));
+			html = html + "결과: " + a + c + b + " = " + result + "<br>";
 			break;
 		default:
+			html = html + "잘못된 공식입니다.<br>";
 			break;
 		}	
-
+		
 		html = html + "<a href='http://localhost:8080/201905'>처음으로</a>";
 		response.getWriter().print(html);
 
