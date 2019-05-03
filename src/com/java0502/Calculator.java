@@ -16,7 +16,7 @@ public class Calculator extends HttpServlet {
 		float result = 0;
 		String html = "";	
 
-		response.setContentType("text/html; charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8;");
 		response.setCharacterEncoding("utf-8");
 		
 		계산기 cal = new 계산기();

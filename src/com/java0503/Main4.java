@@ -1,4 +1,4 @@
-package com.java0502;
+package com.java0503;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,26 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/Main3")
-public class Main3 extends HttpServlet {
+@WebServlet("/Main4")
+public class Main4 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
-		String age = request.getParameter("age");
 		
 		response.setContentType("text/html; charset=UTF-8;");
 		response.setCharacterEncoding("utf-8");
 		
-		String html = "";
-		html = html + "이름: " + name + "<br>";
-		html = html + "나이: " + age + "<br>";
-		html = html + "<a href='http://localhost:8080/201905'>처음으로</a>";
+		구구단 문제 = new 구구단();
+		String result = "";
+//		result = 문제.lv1();
+//		result = 문제.lv2();
+		result = 문제.lv3();
 		
-		response.getWriter().print(html);
+		response.getWriter().print(result);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 	}
 
 }
